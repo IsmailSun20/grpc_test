@@ -1,0 +1,15 @@
+// hello.fbs
+namespace mygrpc;
+
+table HelloRequest {
+  name:string;
+}
+
+table HelloReply {
+  message:string;
+}
+
+rpc_service Greeter {
+  SayHello(HelloRequest):HelloReply;
+}
+

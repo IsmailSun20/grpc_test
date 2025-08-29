@@ -1,0 +1,187 @@
+cmake_minimum_required(VERSION 3.5)
+
+# client(请求响应类型)
+add_executable(client
+    client_main.cpp
+)
+
+target_include_directories(client
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/proto/gen_pb
+)
+
+target_link_libraries(client
+    proto
+    absl_flags
+    absl_flags_parse
+    grpc++_reflection
+    grpc++
+    protobuf
+    grpc
+    cares
+    address_sorting
+    re2
+    upb
+    absl_statusor
+    gpr
+    absl_status
+    absl_strerror
+    absl_random_distributions
+    absl_random_seed_sequences
+    absl_random_internal_pool_urbg
+    absl_random_internal_randen
+    absl_random_internal_randen_hwaes
+    absl_random_internal_randen_hwaes_impl
+    absl_random_internal_randen_slow
+    absl_random_internal_platform
+    absl_random_internal_seed_material
+    absl_random_seed_gen_exception
+    absl_flags_usage
+    absl_flags_usage_internal
+    absl_flags
+    absl_flags_internal
+    absl_flags_marshalling
+    absl_str_format_internal
+    absl_flags_reflection
+    absl_flags_config
+    absl_flags_private_handle_accessor
+    absl_flags_commandlineflag
+    absl_flags_commandlineflag_internal
+    absl_flags_program_name
+    absl_hash
+    absl_city
+    absl_bad_variant_access
+    absl_low_level_hash
+    absl_cord
+    absl_cordz_info
+    absl_cord_internal
+    absl_cordz_functions
+    absl_cordz_handle
+    absl_crc_cord_state
+    absl_crc32c
+    absl_crc_internal
+    absl_crc_cpu_detect
+    absl_raw_hash_set
+    absl_bad_optional_access
+    absl_hashtablez_sampler
+    absl_exponential_biased
+    absl_synchronization
+    absl_graphcycles_internal
+    absl_stacktrace
+    absl_symbolize
+    absl_malloc_internal
+    absl_debugging_internal
+    absl_demangle_internal
+    absl_time
+    absl_strings
+    absl_strings_internal
+    absl_base -lpthread
+    absl_spinlock_wait
+    absl_throw_delegate
+    absl_raw_logging_internal
+    absl_log_severity
+    absl_int128
+    absl_civil_time
+    absl_time_zone
+    libcrypto.a
+    libssl.a
+    dl
+    m
+    pthread 
+    rt
+    systemd
+    z
+)
+
+# LogsClient(订阅类型)
+add_executable(LogsClient
+    LogsClient.cpp
+)
+
+target_include_directories(LogsClient
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/proto/gen_pb
+)
+
+target_link_libraries(LogsClient
+    proto
+    absl_flags
+    absl_flags_parse
+    grpc++_reflection
+    grpc++
+    protobuf
+    grpc
+    cares
+    address_sorting
+    re2
+    upb
+    absl_statusor
+    gpr
+    absl_status
+    absl_strerror
+    absl_random_distributions
+    absl_random_seed_sequences
+    absl_random_internal_pool_urbg
+    absl_random_internal_randen
+    absl_random_internal_randen_hwaes
+    absl_random_internal_randen_hwaes_impl
+    absl_random_internal_randen_slow
+    absl_random_internal_platform
+    absl_random_internal_seed_material
+    absl_random_seed_gen_exception
+    absl_flags_usage
+    absl_flags_usage_internal
+    absl_flags
+    absl_flags_internal
+    absl_flags_marshalling
+    absl_str_format_internal
+    absl_flags_reflection
+    absl_flags_config
+    absl_flags_private_handle_accessor
+    absl_flags_commandlineflag
+    absl_flags_commandlineflag_internal
+    absl_flags_program_name
+    absl_hash
+    absl_city
+    absl_bad_variant_access
+    absl_low_level_hash
+    absl_cord
+    absl_cordz_info
+    absl_cord_internal
+    absl_cordz_functions
+    absl_cordz_handle
+    absl_crc_cord_state
+    absl_crc32c
+    absl_crc_internal
+    absl_crc_cpu_detect
+    absl_raw_hash_set
+    absl_bad_optional_access
+    absl_hashtablez_sampler
+    absl_exponential_biased
+    absl_synchronization
+    absl_graphcycles_internal
+    absl_stacktrace
+    absl_symbolize
+    absl_malloc_internal
+    absl_debugging_internal
+    absl_demangle_internal
+    absl_time
+    absl_strings
+    absl_strings_internal
+    absl_base -lpthread
+    absl_spinlock_wait
+    absl_throw_delegate
+    absl_raw_logging_internal
+    absl_log_severity
+    absl_int128
+    absl_civil_time
+    absl_time_zone
+    libcrypto.a
+    libssl.a
+    dl
+    m
+    pthread 
+    rt
+    systemd
+    z
+)
